@@ -18,22 +18,20 @@ class Store:
 
     def get_price(self, item_name):
         return self.items.get(item_name)
-        if not item in items:
-            none
 
     def update_price(self, item_name, new_price):
         if item_name in self.items:
             self.items[item_name] = new_price
 
-#Рандом магазины
+# Рандом магазины
 store1 = Store("Магнит", "Невский проспект")
-store1.add_item("Яблоки", 50)
+store1.add_item("Яблоки", 80)
 store1.add_item("Мандарины", 100)
 store1.add_item("Ананасы", 150)
 
 store2 = Store("Vintage shop", "Улица 80")
-store2.add_item("Пиджак", 1000)
-store2.add_item("Туфли", 2500)
+store2.add_item("Свитер", 2000)
+store2.add_item("Кеды", 4500)
 store2.add_item("Брюки", 3000)
 
 store3 = Store("Supermarket", "Ул. Пушкина")
@@ -41,16 +39,19 @@ store3.add_item("Молоко", 70)
 store3.add_item("Хлеб", 50)
 store3.add_item("Авокадо", 150)
 
+# Выбери один из созданных магазинов и протестируй все его методы: добавь товар, обнови цену, убери товар и запрашивай цену.
+print(store3.items)
 
+store3.add_item("Булочка", 50)
+print(store3.items)
 
-store3.add_item("Творог", 50)
+store3.update_price("Булочка", 80)
+print(store3.get_price("Булочка"))
+
+store3.remove_item("Булочка")
 print(store3.items)
-store3.update_price(50, 60)
-print(store3.items)
-store3.remove_item("Авокадо")
-print(store3.items)
-store3.get_price("Авокадо")
-print(store3.items)
+
+print(store3.get_price("Булочка"))
 
 # Шаги:
 # 1. Создай класс `Store`:
